@@ -1,0 +1,20 @@
+version: '3.5'
+
+services:
+
+  web:
+    # Build-context
+    build:
+      # relative paths in Dockerfile start in this directory
+      context: .
+      # the dockerfile to use
+      dockerfile: docker/Dockerfile
+    # container name
+    container_name: dotenv-54289
+    volumes:
+      # bind host-directory to container volume so changes are reflected immediately
+      - type: bind
+        source: .
+        target: /var/www/html
+    ports:
+      - "127.0.0.1:8000:80"
