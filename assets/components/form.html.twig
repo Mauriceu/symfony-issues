@@ -1,0 +1,18 @@
+<div {{ attributes }}>
+
+    <h2>Test</h2>
+    {{ form_start(
+        form,
+        {
+            'attr': {
+                'data-action': 'live#action:prevent',
+                'data-live-action-param': 'save'
+            }
+        })
+    }}
+
+    <button>
+        Invoke live action
+    </button>
+    {{ form_end(form) }}
+</div>
