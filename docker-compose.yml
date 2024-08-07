@@ -10,7 +10,7 @@ services:
       # the dockerfile to use
       dockerfile: docker/Dockerfile
     # container name
-    container_name: dotenv-54289
+    container_name: sym-issue
     volumes:
       # bind host-directory to container volume so changes are reflected immediately
       - type: bind

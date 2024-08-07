@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- https://phpunit.de/manual/current/en/appendixes.configuration.html -->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd" backupGlobals="false"
+         bootstrap="tests/bootstrap.php" colors="true" beStrictAboutCoversAnnotation="true"
+         beStrictAboutOutputDuringTests="true" beStrictAboutTestsThatDoNotTestAnything="true"
+         beStrictAboutTodoAnnotatedTests="true" verbose="true">
+    <coverage>
+        <include>
+            <directory>src</directory>
+        </include>
+    </coverage>
+    <php>
+        <server name="KERNEL_CLASS" value="App\Kernel"/>
+        <server name="APP_ENV" value="test" force="true"/>
+        <!-- disable clearing the cache for every suite, huge performance boost -->
+        <server name="APP_DEBUG" value="false" />
+        <server name="SHELL_VERBOSITY" value="-1"/>
+        <server name="SYMFONY_PHPUNIT_REMOVE" value="symfony/yaml"/>
+        <ini name="error_reporting" value="-1"/>
+        <!-- <env name="SYMFONY_DEPRECATIONS_HELPER" value="max[direct]=0"/> -->
+        <env name="SYMFONY_DEPRECATIONS_HELPER" value="disabled"/>
+    </php>
+</phpunit>

@@ -2,19 +2,19 @@
 
 FROM php:8.1-apache
 
-### Enable apache vhost
+RUN apt update -y
+RUN apt install -y git zip unzip
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
 COPY docker/default-ssl.conf /etc/apache2/sites-available/000-default.conf
 RUN a2ensite 000-default
 
-### Make sure the /var/www/html directory exists
 RUN mkdir -p /var/www/html
-# Make sure directory is empty
 RUN rm -rf /var/www/html/*
 WORKDIR /var/www/html/
 
-ENV APP_ENV="prod"
+ENV APP_ENV="dev"
 
-# Enable root user
 USER root
 
 EXPOSE 8000
