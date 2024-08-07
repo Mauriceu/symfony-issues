@@ -1,18 +1,18 @@
 <div {{ attributes }}>
 
     <h2>Test</h2>
-    {{ form_start(
-        form,
-        {
-            'attr': {
-                'data-action': 'live#action:prevent',
-                'data-live-action-param': 'save'
-            }
-        })
-    }}
+    <label for="fromDate">From:</label>
+    <input
+        id="fromDate"
+        type="date"
+        value="{{ from.format('Y-m-d') }}"
+        data-loading="addAttribute(disabled)"
+        data-model="from"
+        min="2024-01-01"
+        max="2025-01-01"
+    />
 
-    <button>
-        Invoke live action
-    </button>
-    {{ form_end(form) }}
+    <p>
+        Current value: {{ from.format('Y-m-d') }}
+    </p>
 </div>

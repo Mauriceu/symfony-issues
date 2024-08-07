@@ -4,6 +4,7 @@ namespace App\Components;
 
 use App\Form\FormModel;
 use App\Form\FormType;
+use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,22 +18,12 @@ use Symfony\UX\LiveComponent\DefaultActionTrait;
 class FormComponent extends AbstractController
 {
     use DefaultActionTrait;
-    use ComponentWithFormTrait;
 
-    #[LiveProp(writable: true)]
-    public ?FormModel $initialFormData = null;
+    #[LiveProp(writable: true, useSerializerForHydration: true, format: 'Y-m-d')]
+    public DateTime $from;
 
-    protected function instantiateForm(): FormInterface
+    public function __construct()
     {
-        $this->initialFormData = $this->initialFormData ?? new FormModel();
-        return $this->createForm(FormType::class, $this->initialFormData);
-    }
-
-    #[LiveAction]
-    public function save(): Response
-    {
-        $this->submitForm();
-
-        return new Response('success');
+        $this->from = new DateTime();
     }
 }
