@@ -24,7 +24,7 @@ class FormComponentTest extends KernelTestCase
         /** @var FormComponent $component */
         $component = $testComponent->component();
         try {
-            dump("invoking live action");
+            dump("invoking live action - password property will be null...");
             $component->save();
         } catch (Throwable $e) {
             self::assertFalse('Did not expect component to fail with message: '.$e->getMessage());
