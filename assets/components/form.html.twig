@@ -13,6 +13,21 @@
     />
 
     <p>
-        Current value: {{ from.format('Y-m-d') }}
+        Current "from" value: {{ from.format('Y-m-d') }}
+    </p>
+
+    <label for="toDate">To:</label>
+    <input
+            id="toDate"
+            type="date"
+            value="{{ to.format('Y-m-d') }}"
+            data-loading="addAttribute(disabled)"
+            data-model="from"
+            min="2024-01-01"
+            max="2025-01-01"
+    />
+
+    <p>
+        Current "to" value: {{ to.format('Y-m-d') }}
     </p>
 </div>

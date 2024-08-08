@@ -19,11 +19,15 @@ class FormComponent extends AbstractController
 {
     use DefaultActionTrait;
 
-    #[LiveProp(writable: true, useSerializerForHydration: true, format: 'Y-m-d')]
+    #[LiveProp(writable: true, fieldName: "from", format: 'Y-m-d')]
     public DateTime $from;
+
+    #[LiveProp(writable: true, fieldName: "to", format: 'Y-m-d')]
+    public DateTime $to;
 
     public function __construct()
     {
         $this->from = new DateTime();
+        $this->to = new DateTime();
     }
 }
