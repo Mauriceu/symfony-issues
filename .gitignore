@@ -21,7 +21,7 @@ composer.lock
 
 ###> symfony/asset-mapper ###
 /public/assets/
-/assets/vendor/
+**/vendor/
 ###< symfony/asset-mapper ###
 
 ###> symfony/phpunit-bridge ###
