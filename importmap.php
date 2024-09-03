@@ -13,7 +13,7 @@
  */
 return [
     'app' => [
-        'path' => './assets/app.js',
+        'path' => './ux-assets/app.js',
         'entrypoint' => true,
     ],
     '@symfony/ux-live-component' => [

@@ -1,6 +1,6 @@
 <?php
 
-use App\Components\FormComponent;
+use App\Components\Component;
 use App\Form\FormModel;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\UX\LiveComponent\Test\InteractsWithLiveComponents;
@@ -18,10 +18,10 @@ class FormComponentTest extends KernelTestCase
 
         dump("creating live component");
         // instantiate component and pass valid model.
-        $testComponent = $this->createLiveComponent(FormComponent::class, ['initialFormData' => $model]);
+        $testComponent = $this->createLiveComponent(Component::class, ['initialFormData' => $model]);
 
         dump("retrieving component instance");
-        /** @var FormComponent $component */
+        /** @var Component $component */
         $component = $testComponent->component();
         try {
             dump("invoking live action - password property will be null...");
