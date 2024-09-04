@@ -22,7 +22,7 @@ services:
 
     # to include Twig Components located in assets folder
     App\Components\:
-        resource: '../ux-assets/components/'
+        resource: '../assets/components/'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

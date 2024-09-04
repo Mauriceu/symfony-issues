@@ -1,0 +1,16 @@
+<div {{ attributes }}>
+    <p>Hello World</p>
+
+    <button onclick="document.getElementById('form_container').style.display = 'block'">Show Form</button>
+
+    <div style="display: none;" id="form_container">
+        {{ form_start(form, {attr: {
+            'data-action': 'live#action:prevent',
+            'data-live-action-param': 'login'
+        }}) }}
+
+        <button>Submit</button>
+        {{ form_end(form) }}
+    </div>
+
+</div>

@@ -2,5 +2,5 @@ framework:
     asset_mapper:
         # The paths to make available to the asset mapper.
         paths:
-            - ux-assets/
-        public_prefix: ux-assets/
+            - assets/
+        public_prefix: assets/

@@ -2,7 +2,7 @@ twig:
     default_path: '%kernel.project_dir%/templates'
     file_name_pattern: '*.twig'
     paths:
-        '%kernel.project_dir%/ux-assets/components': components
+        '%kernel.project_dir%/assets/components': components
 
 when@test:
     twig:
