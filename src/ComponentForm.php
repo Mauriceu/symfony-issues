@@ -13,20 +13,10 @@ class ComponentForm extends AbstractType
 		public function buildForm(FormBuilderInterface $builder, array $options)
 		{
 				$builder
-					->add('username', TextType::class, [
+					->add('some_field', TextType::class, [
 						'required' => false,
 						'attr' => [
-							'placeholder' => 'E-Mail-Adresse oder Kundennummer',
-						],
-						'constraints' => [
-							new NotBlank(),
-						],
-					])
-					->add('password', PasswordType::class, [
-						'required' => false,
-						'always_empty' => false,
-						'attr' => [
-							'placeholder' => 'Passwort eingeben',
+							'placeholder' => 'Some form field',
 						],
 						'constraints' => [
 							new NotBlank(),

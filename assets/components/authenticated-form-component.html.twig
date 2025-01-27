@@ -1,0 +1,14 @@
+<div {{ attributes }}>
+    <p>Logged in as: {{ app.user.userIdentifier }}</p>
+    {{ form_start(form, {
+        'attr': {
+            'data-action': 'live#action:prevent',
+            'data-live-action-param': 'save'
+        }})
+    }}
+
+    {{ form_row(form.some_field) }}
+    <button type="submit">Submit</button>
+
+    {{ form_end(form) }}
+</div>

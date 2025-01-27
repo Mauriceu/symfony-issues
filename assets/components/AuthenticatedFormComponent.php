@@ -5,13 +5,18 @@ namespace App\AssetComponents;
 use App\ComponentForm;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\UX\LiveComponent\Attribute\AsLiveComponent;
+use Symfony\UX\LiveComponent\Attribute\LiveAction;
 use Symfony\UX\LiveComponent\ComponentWithFormTrait;
 use Symfony\UX\LiveComponent\DefaultActionTrait;
 
-#[AsLiveComponent(template: '@components/form-component.html.twig')]
-class FormComponent extends AbstractController
+#[AsLiveComponent(template: '@components/authenticated-form-component.html.twig')]
+#[IsGranted('ROLE_ADMIN')]
+class AuthenticatedFormComponent extends AbstractController
 {
     use DefaultActionTrait;
 		use ComponentWithFormTrait;
@@ -21,8 +26,9 @@ class FormComponent extends AbstractController
 				return $this->createForm(ComponentForm::class);
 		}
 
-		public function login(): void
+		#[LiveAction]
+		public function save(): Response
 		{
-				throw new UnprocessableEntityHttpException();
+				return new JsonResponse(['success' => true]);
 		}
 }
