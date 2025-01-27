@@ -42,13 +42,15 @@
     "autoload": {
         "psr-4": {
             "App\\": "src/",
-            "App\\Components\\": "/assets/components"
+            "App\\AssetComponents\\": "assets/components"
 
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "App\\Tests\\": "tests/",
+            "App\\": "src/",
+            "App\\AssetComponents\\": "assets/components"
         }
     },
     "replace": {

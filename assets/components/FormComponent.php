@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Components;
+namespace App\AssetComponents;
 
 use App\ComponentForm;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormInterface;
+use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
 use Symfony\UX\LiveComponent\Attribute\AsLiveComponent;
 use Symfony\UX\LiveComponent\ComponentWithFormTrait;
 use Symfony\UX\LiveComponent\DefaultActionTrait;
@@ -22,6 +23,6 @@ class FormComponent extends AbstractController
 
 		public function login(): void
 		{
-				$this->submitForm();
+				throw new UnprocessableEntityHttpException();
 		}
 }

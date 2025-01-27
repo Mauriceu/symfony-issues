@@ -21,8 +21,8 @@ services:
             - '../src/Kernel.php'
 
     # to include Twig Components located in assets folder
-    App\Components\:
-        resource: '../assets/components/'
+    App\AssetComponents\:
+        resource: '%kernel.project_dir%/assets/components/'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
